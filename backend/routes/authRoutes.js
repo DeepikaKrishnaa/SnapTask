@@ -21,7 +21,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "http://localhost:3000/auth?mode=login",
+    failureRedirect: "http://3-110-143-145.nip.io:30008/auth?mode=login",
     session: false,
   }),
   (req, res) => {
@@ -32,7 +32,7 @@ router.get(
     );
 
     res.redirect(
-      `http://localhost:3000/todo?token=${token}&user=${encodeURIComponent(
+      `http://3-110-143-145.nip.io:30008/todo?token=${token}&user=${encodeURIComponent(
         JSON.stringify({
           _id: req.user._id,
           name: req.user.name,

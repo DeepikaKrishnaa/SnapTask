@@ -1,0 +1,150 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.bg-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+.bg-blob.purple {
+  background: #7c3aed;
+  top: -100px;
+  left: -100px;
+}
+
+.bg-blob.blue {
+  background: #2563eb;
+  bottom: -120px;
+  right: -100px;
+}
+
+.auth-page .auth-card {
+  width: 350px;
+  padding: 35px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 2;
+  animation: cardSlide 0.4s ease;
+}
+
+.auth-page .auth-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-page .auth-card input {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.auth-page .auth-card input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-page .auth-card input:focus {
+  box-shadow: 0 0 0 1px #7c3aed;
+}
+
+.auth-page .btn {
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+}
+
+.auth-page .primary {
+  background: linear-gradient(125deg, #6568ff, #854de6);
+  color: white;
+  transition: 0.3s;
+}
+
+.auth-page .primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
+}
+
+.auth-page .toggle-text {
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.auth-page .toggle-text span {
+  color: #c084fc;
+  cursor: pointer;
+}
+
+.auth-page .toggle-text span:hover {
+  text-decoration: underline;
+}
+
+.error-text {
+  text-align: center;
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  animation: errorPop 0.2s ease;
+}
+
+@keyframes cardSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes errorPop {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.otp-card {
+  text-align: center;
+}
+
+.otp-subtext {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.otp-card input {
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}

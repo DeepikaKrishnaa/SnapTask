@@ -1,0 +1,240 @@
+.landing {
+  min-height: 100vh;
+  padding: 30px 80px;
+  position: relative;
+  color: white;
+}
+
+.bg-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.bg-blob.purple {
+  background: #7c3aed;
+  top: -80px;
+  left: -100px;
+}
+
+.bg-blob.blue {
+  background: #2563eb;
+  bottom: -120px;
+  right: -100px;
+}
+
+.landing .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 0.6s ease;
+}
+
+.landing .logo {
+  position: relative;
+  top: 6px;
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #7AD0F7, #cab1ff);
+  background-clip: text;
+  color: transparent;
+}
+
+.landing .btn {
+  padding: 20px 35px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.landing .primary {
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  border: none;
+  color: white;
+}
+
+.landing .primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.5);
+}
+
+.landing .outline {
+  background: transparent;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  color: #c084fc;
+}
+
+.landing .outline:hover {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.landing .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.landing .hero-left {
+  animation: slideLeft 0.6s ease;
+}
+
+.landing .hero-right {
+  animation: slideRight 0.6s ease;
+}
+
+.landing .hero-left h1 {
+  font-size: 56px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.landing .hero-left span {
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  background-clip: text;
+  color: transparent;
+}
+
+.landing .hero-left p {
+  margin: 20px 0 40px;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.landing .hero-buttons {
+  display: flex;
+  gap: 50px;
+}
+
+.landing .glass-card {
+  margin-right: 50px;
+  width: 250px;
+  height: 120px;
+  padding: 30px;
+  font-size: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.glass-card p {
+  margin: 10px 0;
+  color: #e5e7eb;
+}
+
+.landing .features {
+  display: flex;
+  gap: 25px;
+  margin-top: 140px;
+  position: relative;
+  z-index: 2;
+}
+
+.landing .feature-card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  animation: slideUp 0.6s ease;
+  animation-fill-mode: forwards;
+}
+
+.landing .feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.landing .feature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.landing .feature-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.landing .feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2);
+}
+
+.landing .icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #a855f7;
+}
+
+.landing .feature-card p {
+  color: #9ca3af;
+}
+
+.landing .footer {
+  margin-top: 140px;
+  text-align: center;
+  color: #6b7280;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

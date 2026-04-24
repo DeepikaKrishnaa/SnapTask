@@ -1,0 +1,389 @@
+.todo {
+  display: flex;
+  min-height: 100vh;
+  color: white;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124,58,237,0.25), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(59,130,246,0.15), transparent 40%),
+    linear-gradient(180deg, #020617, #030617);
+}
+
+.sidebar {
+  width: 200px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(10, 10, 25, 0.6);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  animation: slideInLeft 0.6s ease;
+}
+
+.sidebar-top, .sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  background-clip: text;
+  color: transparent;
+}
+
+.menu p {
+  margin: 20px 0;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.menu p:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.menu p.active {
+  color: white;
+  transform: translateX(5px);
+}
+
+.plan-status {
+  margin: -15px 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.premium {
+  padding: 14px;
+  width: 100%;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+}
+
+.logout {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: #f87171;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout:hover {
+  background: rgba(248,113,113,0.1);
+}
+
+.main.centered {
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.main.centered h1 {
+  margin-bottom: 50px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.main.centered .tasks {
+  max-width: 900px;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  gap: 100px;
+  padding: 40px 60px;
+  margin-top: 30px;
+  align-items: flex-start;
+  animation: slideInRight 0.6s ease;
+  transition: all 0.3s ease;
+}
+
+.tasks {
+  flex: 2;
+  max-width: 700px;
+}
+
+.tasks h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.task-input input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  outline: none;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.2s;
+}
+
+.task-input input:focus {
+  box-shadow: 0 0 0 1px #7c3aed;
+  background: rgba(255,255,255,0.08);
+}
+
+.task-list {
+  margin-top: 25px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.25s ease;
+  will-change: transform;
+  animation: fadeUp 0.3s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.05);
+}
+
+.task-item span {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.task-item.done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.edit-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.task-content {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  opacity: 0.7;
+  font-size: 16px;
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  opacity: 1;
+}
+
+.notes {
+  flex: 1;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.notes h3 {
+  margin: 0;
+}
+
+.notes textarea {
+  width: 100%;
+  height: 140px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #1e1b4b;
+  color: white;
+  resize: none;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.notes textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.5);
+}
+
+.notes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-note {
+  padding: 14px;
+  width: 100%;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  cursor: pointer;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.add-note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+}
+
+.note-card {
+  position: relative;
+}
+
+.delete-note {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 6px;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.note-card:hover .delete-note {
+  opacity: 1;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.premium-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(25px);
+  background: rgba(255,255,255,0.05);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.03);
+
+  animation: fadeUp 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.price {
+  font-size: 36px;
+  margin: 10px 0 20px;
+}
+
+.features {
+  margin: 20px 0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+}

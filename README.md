@@ -1,2 +1,1 @@
-# SnapTask
-# Get things done in a snap
+# SnapTask - Get things done in a snap

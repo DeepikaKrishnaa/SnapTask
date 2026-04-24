@@ -66,7 +66,7 @@ export default function Auth() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://3-110-143-145.nip.io:30007/api/auth/google";
+    window.location.href = "http://52-66-27-174.nip.io:30007/api/auth/google";
   };
 
   return (
